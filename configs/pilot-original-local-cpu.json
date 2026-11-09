@@ -1,0 +1,32 @@
+{
+  "arms": [
+    "baseline",
+    "evidence_prompt"
+  ],
+  "seeds": [
+    0
+  ],
+  "faults": [
+    "clean",
+    "unit_convert"
+  ],
+  "max_rounds": 12,
+  "policy_file": "policy.json",
+  "pilot_only": true,
+  "model_revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+  "backend": "openai_compatible",
+  "deployment": {
+    "model_revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+    "runtime_version": "llama.cpp 0.8.0-dev b12000 commit 68d20b884",
+    "quantization": "Q4_K_M",
+    "device": "CPU Intel Core Ultra 9 285K; 8 generation threads; 16 batch threads"
+  },
+  "endpoint": {
+    "base_url": "http://127.0.0.1:8018/v1",
+    "model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+    "temperature": 0,
+    "max_tokens": 1024,
+    "timeout_seconds": 180
+  },
+  "study_note": "Bounded pilot on two original benchmark charts; selected before inference; not a representative model comparison"
+}

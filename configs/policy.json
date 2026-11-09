@@ -1,0 +1,10 @@
+{
+  "version": "study-policy-v1",
+  "scenario_time": "2023-11-13T10:15:00+00:00",
+  "bounds": {"MG": [0.2, 20.0], "K": [1.0, 10.0], "GLU": [10.0, 1500.0], "A1C": [2.0, 25.0]},
+  "bounds_status": "Research assumptions, not clinically validated limits; use no-bounds sensitivity analysis and obtain domain review before interpreting safety",
+  "conflict_tolerance": 0.000001,
+  "potassium_window_hours": null,
+  "missing_hba1c": "return_minus_one_and_withhold",
+  "expired_hba1c": "follow_observed_task_rule_and_report_clean_reference_difference_separately"
+}

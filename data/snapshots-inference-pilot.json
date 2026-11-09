@@ -1,0 +1,110 @@
+[
+  {
+    "case": {
+      "id": "task5_synthetic0",
+      "eval_MRN": "SYN-task5-0",
+      "instruction": "Check latest MG in 24 hours. If <=1.9 order magnesium: 1.5–1.9:1g/1h; 1–<1.5:2g/2h; <1:4g/4h. Otherwise no order.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-0"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 2.1,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-0"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 1.8,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task5-0",
+        "identifier": [
+          {
+            "value": "SYN-task5-0"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task9_synthetic0",
+      "eval_MRN": "SYN-task9-0",
+      "instruction": "If latest K <3.5, order oral potassium (3.5-K)*100 mEq, NDC 40032-917-01, plus potassium test LOINC 2823-3 tomorrow 08:00.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: K. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-0"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 3.3,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-0"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 3.0,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task9-0",
+        "identifier": [
+          {
+            "value": "SYN-task9-0"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  }
+]

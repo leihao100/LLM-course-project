@@ -1,0 +1,7 @@
+{
+  "agents": ["chart_faithful_rule", "evidence_rule", "always_abstain"],
+  "arms": ["baseline"],
+  "seeds": [0],
+  "faults": ["clean", "drop_latest", "decimal_shift", "unit_convert", "backdate_latest"],
+  "policy_file": "configs/policy.json"
+}

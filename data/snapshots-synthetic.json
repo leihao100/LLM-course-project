@@ -1,0 +1,1382 @@
+[
+  {
+    "case": {
+      "id": "task4_synthetic0",
+      "eval_MRN": "SYN-task4-0",
+      "instruction": "Return the latest MG value within 24 hours in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task4-0"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 2.1,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task4-0"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 1.8,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task4-0",
+        "identifier": [
+          {
+            "value": "SYN-task4-0"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task4_synthetic1",
+      "eval_MRN": "SYN-task4-1",
+      "instruction": "Return the latest MG value within 24 hours in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task4-1"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 2.1,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task4-1",
+        "identifier": [
+          {
+            "value": "SYN-task4-1"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task4_synthetic2",
+      "eval_MRN": "SYN-task4-2",
+      "instruction": "Return the latest MG value within 24 hours in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task4-2"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 1.6,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task4-2"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 1.3,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task4-2",
+        "identifier": [
+          {
+            "value": "SYN-task4-2"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task4_synthetic3",
+      "eval_MRN": "SYN-task4-3",
+      "instruction": "Return the latest MG value within 24 hours in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task4-3"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 0.8,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task4-3",
+        "identifier": [
+          {
+            "value": "SYN-task4-3"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task4_synthetic4",
+      "eval_MRN": "SYN-task4-4",
+      "instruction": "Return the latest MG value within 24 hours in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task4-4"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 2.3,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task4-4"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 2.0,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task4-4",
+        "identifier": [
+          {
+            "value": "SYN-task4-4"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task4_synthetic5",
+      "eval_MRN": "SYN-task4-5",
+      "instruction": "Return the latest MG value within 24 hours in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task4-5"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 1.9,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task4-5",
+        "identifier": [
+          {
+            "value": "SYN-task4-5"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task5_synthetic0",
+      "eval_MRN": "SYN-task5-0",
+      "instruction": "Check latest MG in 24 hours. If <=1.9 order magnesium: 1.5–1.9:1g/1h; 1–<1.5:2g/2h; <1:4g/4h. Otherwise no order.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-0"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 2.1,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-0"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 1.8,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task5-0",
+        "identifier": [
+          {
+            "value": "SYN-task5-0"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task5_synthetic1",
+      "eval_MRN": "SYN-task5-1",
+      "instruction": "Check latest MG in 24 hours. If <=1.9 order magnesium: 1.5–1.9:1g/1h; 1–<1.5:2g/2h; <1:4g/4h. Otherwise no order.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-1"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 2.1,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task5-1",
+        "identifier": [
+          {
+            "value": "SYN-task5-1"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task5_synthetic2",
+      "eval_MRN": "SYN-task5-2",
+      "instruction": "Check latest MG in 24 hours. If <=1.9 order magnesium: 1.5–1.9:1g/1h; 1–<1.5:2g/2h; <1:4g/4h. Otherwise no order.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-2"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 1.6,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-2"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 1.3,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task5-2",
+        "identifier": [
+          {
+            "value": "SYN-task5-2"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task5_synthetic3",
+      "eval_MRN": "SYN-task5-3",
+      "instruction": "Check latest MG in 24 hours. If <=1.9 order magnesium: 1.5–1.9:1g/1h; 1–<1.5:2g/2h; <1:4g/4h. Otherwise no order.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-3"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 0.8,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task5-3",
+        "identifier": [
+          {
+            "value": "SYN-task5-3"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task5_synthetic4",
+      "eval_MRN": "SYN-task5-4",
+      "instruction": "Check latest MG in 24 hours. If <=1.9 order magnesium: 1.5–1.9:1g/1h; 1–<1.5:2g/2h; <1:4g/4h. Otherwise no order.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-4"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 2.3,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-4"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 2.0,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task5-4",
+        "identifier": [
+          {
+            "value": "SYN-task5-4"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task5_synthetic5",
+      "eval_MRN": "SYN-task5-5",
+      "instruction": "Check latest MG in 24 hours. If <=1.9 order magnesium: 1.5–1.9:1g/1h; 1–<1.5:2g/2h; <1:4g/4h. Otherwise no order.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: MG. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "MG"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task5-5"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 1.9,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task5-5",
+        "identifier": [
+          {
+            "value": "SYN-task5-5"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task7_synthetic0",
+      "eval_MRN": "SYN-task7-0",
+      "instruction": "Return the most recent GLU value in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: GLU. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "GLU"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task7-0"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 111,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "GLU"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task7-0"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 110,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task7-0",
+        "identifier": [
+          {
+            "value": "SYN-task7-0"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task7_synthetic1",
+      "eval_MRN": "SYN-task7-1",
+      "instruction": "Return the most recent GLU value in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: GLU. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "GLU"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task7-1"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 180,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task7-1",
+        "identifier": [
+          {
+            "value": "SYN-task7-1"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task7_synthetic2",
+      "eval_MRN": "SYN-task7-2",
+      "instruction": "Return the most recent GLU value in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: GLU. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "GLU"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task7-2"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 71,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "GLU"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task7-2"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 70,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task7-2",
+        "identifier": [
+          {
+            "value": "SYN-task7-2"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task7_synthetic3",
+      "eval_MRN": "SYN-task7-3",
+      "instruction": "Return the most recent GLU value in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: GLU. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "GLU"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task7-3"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 90,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task7-3",
+        "identifier": [
+          {
+            "value": "SYN-task7-3"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task7_synthetic4",
+      "eval_MRN": "SYN-task7-4",
+      "instruction": "Return the most recent GLU value in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: GLU. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "GLU"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task7-4"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 231,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "GLU"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task7-4"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 230,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task7-4",
+        "identifier": [
+          {
+            "value": "SYN-task7-4"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task7_synthetic5",
+      "eval_MRN": "SYN-task7-5",
+      "instruction": "Return the most recent GLU value in mg/dL, or [-1] if missing.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: GLU. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "GLU"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task7-5"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 120,
+          "unit": "mg/dL"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task7-5",
+        "identifier": [
+          {
+            "value": "SYN-task7-5"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task9_synthetic0",
+      "eval_MRN": "SYN-task9-0",
+      "instruction": "If latest K <3.5, order oral potassium (3.5-K)*100 mEq, NDC 40032-917-01, plus potassium test LOINC 2823-3 tomorrow 08:00.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: K. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-0"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 3.3,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-0"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 3.0,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task9-0",
+        "identifier": [
+          {
+            "value": "SYN-task9-0"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task9_synthetic1",
+      "eval_MRN": "SYN-task9-1",
+      "instruction": "If latest K <3.5, order oral potassium (3.5-K)*100 mEq, NDC 40032-917-01, plus potassium test LOINC 2823-3 tomorrow 08:00.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: K. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-1"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 3.6,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task9-1",
+        "identifier": [
+          {
+            "value": "SYN-task9-1"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task9_synthetic2",
+      "eval_MRN": "SYN-task9-2",
+      "instruction": "If latest K <3.5, order oral potassium (3.5-K)*100 mEq, NDC 40032-917-01, plus potassium test LOINC 2823-3 tomorrow 08:00.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: K. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-2"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 3.6999999999999997,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-2"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 3.4,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task9-2",
+        "identifier": [
+          {
+            "value": "SYN-task9-2"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task9_synthetic3",
+      "eval_MRN": "SYN-task9-3",
+      "instruction": "If latest K <3.5, order oral potassium (3.5-K)*100 mEq, NDC 40032-917-01, plus potassium test LOINC 2823-3 tomorrow 08:00.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: K. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-3"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 4.1,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task9-3",
+        "identifier": [
+          {
+            "value": "SYN-task9-3"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task9_synthetic4",
+      "eval_MRN": "SYN-task9-4",
+      "instruction": "If latest K <3.5, order oral potassium (3.5-K)*100 mEq, NDC 40032-917-01, plus potassium test LOINC 2823-3 tomorrow 08:00.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: K. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-4"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 3.5,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-4"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 3.2,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task9-4",
+        "identifier": [
+          {
+            "value": "SYN-task9-4"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task9_synthetic5",
+      "eval_MRN": "SYN-task9-5",
+      "instruction": "If latest K <3.5, order oral potassium (3.5-K)*100 mEq, NDC 40032-917-01, plus potassium test LOINC 2823-3 tomorrow 08:00.",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: K. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "K"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task9-5"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 3.5,
+          "unit": "mEq/L"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task9-5",
+        "identifier": [
+          {
+            "value": "SYN-task9-5"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task10_synthetic0",
+      "eval_MRN": "SYN-task10-0",
+      "instruction": "Return latest HbA1c value and timestamp. If >1 year old order LOINC 4548-4. If absent return [-1].",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: A1C. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "A1C"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task10-0"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 7.3,
+          "unit": "%"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "A1C"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task10-0"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 6.3,
+          "unit": "%"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task10-0",
+        "identifier": [
+          {
+            "value": "SYN-task10-0"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task10_synthetic1",
+      "eval_MRN": "SYN-task10-1",
+      "instruction": "Return latest HbA1c value and timestamp. If >1 year old order LOINC 4548-4. If absent return [-1].",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: A1C. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "A1C"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task10-1"
+        },
+        "effectiveDateTime": "2022-07-01T10:15:00+00:00",
+        "valueQuantity": {
+          "value": 7.0,
+          "unit": "%"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task10-1",
+        "identifier": [
+          {
+            "value": "SYN-task10-1"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task10_synthetic2",
+      "eval_MRN": "SYN-task10-2",
+      "instruction": "Return latest HbA1c value and timestamp. If >1 year old order LOINC 4548-4. If absent return [-1].",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: A1C. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "A1C"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task10-2"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 6.2,
+          "unit": "%"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "A1C"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task10-2"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 5.2,
+          "unit": "%"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task10-2",
+        "identifier": [
+          {
+            "value": "SYN-task10-2"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task10_synthetic3",
+      "eval_MRN": "SYN-task10-3",
+      "instruction": "Return latest HbA1c value and timestamp. If >1 year old order LOINC 4548-4. If absent return [-1].",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: A1C. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "A1C"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task10-3"
+        },
+        "effectiveDateTime": "2022-07-01T10:15:00+00:00",
+        "valueQuantity": {
+          "value": 8.0,
+          "unit": "%"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task10-3",
+        "identifier": [
+          {
+            "value": "SYN-task10-3"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task10_synthetic4",
+      "eval_MRN": "SYN-task10-4",
+      "instruction": "Return latest HbA1c value and timestamp. If >1 year old order LOINC 4548-4. If absent return [-1].",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: A1C. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "earlier",
+        "status": "final",
+        "code": {
+          "text": "A1C"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task10-4"
+        },
+        "effectiveDateTime": "2023-11-13T04:15:00+00:00",
+        "valueQuantity": {
+          "value": 7.0,
+          "unit": "%"
+        }
+      },
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "A1C"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task10-4"
+        },
+        "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+        "valueQuantity": {
+          "value": 6.0,
+          "unit": "%"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task10-4",
+        "identifier": [
+          {
+            "value": "SYN-task10-4"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  },
+  {
+    "case": {
+      "id": "task10_synthetic5",
+      "eval_MRN": "SYN-task10-5",
+      "instruction": "Return latest HbA1c value and timestamp. If >1 year old order LOINC 4548-4. If absent return [-1].",
+      "context": "Synthetic software fixture. It is 2023-11-13T10:15:00+00:00. Code: A1C. Magnesium NDC:0338-1715-40."
+    },
+    "resources": [
+      {
+        "resourceType": "Observation",
+        "id": "latest",
+        "status": "final",
+        "code": {
+          "text": "A1C"
+        },
+        "subject": {
+          "reference": "Patient/SYN-task10-5"
+        },
+        "effectiveDateTime": "2022-07-01T10:15:00+00:00",
+        "valueQuantity": {
+          "value": 6.5,
+          "unit": "%"
+        }
+      },
+      {
+        "resourceType": "Patient",
+        "id": "SYN-task10-5",
+        "identifier": [
+          {
+            "value": "SYN-task10-5"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "type": "synthetic_fixture"
+    }
+  }
+]

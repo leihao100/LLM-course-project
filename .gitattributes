@@ -1,0 +1,7 @@
+*.pdf binary
+*.docx binary
+*.png binary
+*.zip binary
+
+# Retain audited upstream bytes, including original whitespace.
+vendor/*.py -text -whitespace

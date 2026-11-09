@@ -1,0 +1,36 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+work/
+models/
+*.gguf
+*.safetensors
+*.tmp
+build/
+dist/
+*.egg-info/
+*.aux
+*.out
+*.log
+
+# Original benchmark tasks and charts are obtained separately.
+vendor/tasks_original.json
+data/tasks_150.json
+data/run_plan.csv
+data/snapshots-real*
+data/snapshots-original*
+data/snapshots-cloud-*
+
+# Keep only explicitly reviewed aggregate results and synthetic audit output.
+results/*
+!results/audit.json
+!results/inference-verification.json
+!results/midterm-summary.json
+!results/publication-checks.json
+
+# Local authorization and archived bundles can contain chart-level material.
+SHA256SUMS.json
+clinical-chart-safety-*.zip

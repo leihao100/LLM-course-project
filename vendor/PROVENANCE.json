@@ -1,0 +1,18 @@
+{
+  "audited_on": "2026-10-30",
+  "benchmark_repo": "https://github.com/stanfordmlgroup/MedAgentBench",
+  "benchmark_commit": "99260117137b09f04837a8c18d18a1107efa55ae",
+  "task_dataset": "data/medagentbench/test_data_v2.json (v1 benchmark runner default; not the separate MedAgentBench-v2 release)",
+  "original_refsol_url": "https://stanfordmedicine.box.com/s/fizv0unyjgkb1r3a83rfn5p3dc673uho",
+  "box_file_id": "1756907296228",
+  "box_version_id": "1935253050628",
+  "original_refsol_sha1": "1440e8b982059a3fc730a26f448465f549910b36",
+  "comparison_repo_commit": "46c93f39bd8679af35790eaaa5dd41bc067024a0",
+  "files": {
+    "tasks_original.json": "b6e89b2ef82f1bef27c5778a644a8a66c7b25738bbd6a48d03ab3e5182df6ca8",
+    "runner_original.py": "d31253d5ea40c033d64e1b43599b4a258de55c3512aab79f66c623a488116668",
+    "refsol_original.py": "67d19da263ac92c1b7075b3218ace3a4bd19b206a06fc7aebcc897dc39625419",
+    "funcs_v1.json": "c977266db5eca75182c0d12cac1962b33ae6b5a54b9029ceb104e1a93b4c38c1",
+    "LICENSE.MedAgentBench": "a5dd06db7e5e4d6f790b24d2c54a027e1b5ad7519786bd31a7ff6508cd354828"
+  }
+}

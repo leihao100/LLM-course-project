@@ -1,0 +1,140 @@
+{
+  "evidence_type": "deterministic_original_scorer_counterexamples; no LLM involved",
+  "original_refsol_sha256": "67d19da263ac92c1b7075b3218ace3a4bd19b206a06fc7aebcc897dc39625419",
+  "findings": [
+    {
+      "id": "shared_state_grading",
+      "verified": true,
+      "baseline_mg": 1.8,
+      "corrupted_mg": 0.18,
+      "clean_dose_g": 1,
+      "proposed_dose_g": 4,
+      "original_grader_on_corrupted": {
+        "pass": true,
+        "error": null,
+        "log": "task5_audit [0.18] []\n"
+      },
+      "original_grader_on_clean": {
+        "pass": false,
+        "error": null,
+        "log": "\n"
+      },
+      "mutation": {
+        "fault": "decimal_shift",
+        "applicable": true,
+        "changed": true,
+        "target": "latest",
+        "before_hash": "3fedb4a962e1c6fc94ae08657865152fefc6951c8e5d1ef15ddcdb200191215d",
+        "before": {
+          "resourceType": "Observation",
+          "id": "latest",
+          "status": "final",
+          "code": {
+            "text": "MG"
+          },
+          "subject": {
+            "reference": "Patient/SYN-AUDIT"
+          },
+          "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+          "valueQuantity": {
+            "value": 1.8,
+            "unit": "mg/dL"
+          }
+        },
+        "after": {
+          "resourceType": "Observation",
+          "id": "latest",
+          "status": "final",
+          "code": {
+            "text": "MG"
+          },
+          "subject": {
+            "reference": "Patient/SYN-AUDIT"
+          },
+          "effectiveDateTime": "2023-11-13T08:15:00+00:00",
+          "valueQuantity": {
+            "value": 0.18,
+            "unit": "mg/dL"
+          }
+        },
+        "after_hash": "d7690a407c8ebdbab112a05237afc85bb3845c7ca755222a7380d7cb5bd508ac"
+      }
+    },
+    {
+      "id": "post_substring_false_detection",
+      "verified": true,
+      "check_has_post": true,
+      "parsed_posts": 0,
+      "meaning": "False detection of a write, often causing a false fail; not proof of an executed order"
+    },
+    {
+      "id": "v1_post_not_executed",
+      "verified": true,
+      "post_branch_call_names": [
+        "r.startswith",
+        "r.startswith",
+        "json.loads",
+        "session.inject",
+        "TaskOutput",
+        "TaskOutput",
+        "'\\n'.join",
+        "session.inject",
+        "r.split",
+        "len"
+      ],
+      "meaning": "POST JSON is accepted in the text harness without an HTTP write"
+    },
+    {
+      "id": "potassium_no_age_window",
+      "verified": true,
+      "age_days": 500,
+      "original_verdict": {
+        "pass": true,
+        "error": null,
+        "log": "task9_audit [3.0] []\n"
+      },
+      "meaning": "Consistent with task9 instruction; adding a freshness window changes the policy"
+    },
+    {
+      "id": "future_magnesium_accepted",
+      "verified": true,
+      "original_verdict": {
+        "pass": true,
+        "error": null,
+        "log": "task5_audit [1.8] []\n"
+      },
+      "meaning": "Future timestamp is not excluded by the original task5 lower-bound-only filter"
+    },
+    {
+      "id": "missing_hba1c_ambiguity",
+      "verified": true,
+      "no_order": {
+        "pass": false,
+        "error": null,
+        "log": ""
+      },
+      "with_order": {
+        "pass": true,
+        "error": null,
+        "log": "task10_audit [-1] [-1]\n"
+      },
+      "meaning": "Original grader requires test on absent A1c; instruction states [-1] and only explicitly orders for age>1 year"
+    },
+    {
+      "id": "route_schema_mismatch",
+      "verified": true,
+      "original_verdict": {
+        "pass": false,
+        "error": null,
+        "log": "\n"
+      },
+      "meaning": "Published funcs_v1.json route is an object; original task5 scorer requires bare string IV"
+    },
+    {
+      "id": "terminal_post_mention_crashes_parser",
+      "verified": true,
+      "error": "IndexError",
+      "meaning": "idx<len(history) is insufficient before reading history[idx+1]"
+    }
+  ]
+}

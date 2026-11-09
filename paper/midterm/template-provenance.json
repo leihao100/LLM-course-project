@@ -1,0 +1,9 @@
+{
+  "retrieved": "2026-11-05",
+  "official_url": "https://media.neurips.cc/Conferences/NeurIPS2024/Styles.zip",
+  "zip_sha256": "67a5a2e6ef6af3f14cd03fd1d557351a3128648abd29c45310bb190f5552d322",
+  "style_sha256": "8ab01b6bcd359839d43d11a5663502105dacd8ab50a3a49809491fce4f070aff",
+  "assignment_link": "https://www.overleaf.com/latex/templates/neurips-2024/tpsbbrdqcmsh",
+  "note": "The mutable Overleaf link currently displays 2026; frozen official 2024 style is used to match the year in the assigned URL.",
+  "zip_member": "Styles/neurips_2024.sty"
+}

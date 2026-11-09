@@ -1,0 +1,36 @@
+{
+  "arms": [
+    "baseline",
+    "evidence_prompt"
+  ],
+  "seeds": [
+    0
+  ],
+  "faults": [
+    "clean",
+    "unit_convert"
+  ],
+  "max_rounds": 12,
+  "policy_file": "policy.json",
+  "pilot_only": true,
+  "model_revision": "provider-managed-unpinned",
+  "backend": "codex_cli",
+  "deployment": {
+    "model_revision": "provider-managed-unpinned",
+    "runtime_version": "codex-cli 0.160.1",
+    "quantization": "provider-managed-unknown",
+    "device": "subscription cloud service"
+  },
+  "endpoint": {
+    "model": "CodexCLI-default-2026-11-05-unpinned"
+  },
+  "codex": {
+    "working_directory": "work/codex-model-only",
+    "raw_directory": "results/pilot-original-codex-aligned/raw",
+    "timeout_seconds": 180
+  },
+  "sampling_note": "seed=0 is pairing label; temperature/seed not exposed by CLI; default model observed separately, not pinned",
+  "study_note": "Prospective format-aligned pilot on the same two previously authorized minimized cases. Both arms receive identical schema and final-answer clarification. No output normalization; no changed dose rules; all outcomes retained.",
+  "cloud_authorization_file": "results/cloud-data-authorization.json",
+  "protocol_version": "aligned-v1"
+}

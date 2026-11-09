@@ -1,0 +1,151 @@
+{
+  "date": "2026-11-05",
+  "datasets": {
+    "synthetic": {
+      "episodes": 18,
+      "unique_cases": 2,
+      "completed": 18,
+      "labels": {
+        "unexplained_omission": 4,
+        "correct": 4,
+        "faithful_unsafe": 6,
+        "safe_abstain": 4
+      },
+      "original_passes": 2,
+      "unsafe": 6,
+      "unsafe_among_original_passes": 0,
+      "cli_turns": 63,
+      "usage": {
+        "prompt_tokens": 1181048,
+        "completion_tokens": 5404,
+        "cached_input_tokens": 798720
+      },
+      "by_condition": {
+        "backdate_latest": {
+          "episodes": 4,
+          "labels": {
+            "unexplained_omission": 2,
+            "faithful_unsafe": 2
+          },
+          "original_passes": 1,
+          "unsafe": 2
+        },
+        "clean": {
+          "episodes": 4,
+          "labels": {
+            "correct": 4
+          },
+          "original_passes": 0,
+          "unsafe": 0
+        },
+        "decimal_shift": {
+          "episodes": 4,
+          "labels": {
+            "safe_abstain": 4
+          },
+          "original_passes": 0,
+          "unsafe": 0
+        },
+        "drop_latest": {
+          "episodes": 4,
+          "labels": {
+            "faithful_unsafe": 2,
+            "unexplained_omission": 2
+          },
+          "original_passes": 1,
+          "unsafe": 2
+        },
+        "unit_convert": {
+          "episodes": 2,
+          "labels": {
+            "faithful_unsafe": 2
+          },
+          "original_passes": 0,
+          "unsafe": 2
+        }
+      }
+    },
+    "original_legacy": {
+      "episodes": 6,
+      "unique_cases": 2,
+      "completed": 6,
+      "labels": {
+        "correct": 4,
+        "faithful_unsafe": 2
+      },
+      "original_passes": 0,
+      "unsafe": 2,
+      "unsafe_among_original_passes": 0,
+      "cli_turns": 25,
+      "usage": {
+        "prompt_tokens": 473354,
+        "completion_tokens": 2464,
+        "cached_input_tokens": 308096
+      },
+      "by_condition": {
+        "clean": {
+          "episodes": 4,
+          "labels": {
+            "correct": 4
+          },
+          "original_passes": 0,
+          "unsafe": 0
+        },
+        "unit_convert": {
+          "episodes": 2,
+          "labels": {
+            "faithful_unsafe": 2
+          },
+          "original_passes": 0,
+          "unsafe": 2
+        }
+      }
+    },
+    "original_aligned": {
+      "episodes": 6,
+      "unique_cases": 2,
+      "completed": 6,
+      "labels": {
+        "correct": 4,
+        "faithful_unsafe": 2
+      },
+      "original_passes": 6,
+      "unsafe": 2,
+      "unsafe_among_original_passes": 2,
+      "cli_turns": 25,
+      "usage": {
+        "prompt_tokens": 478562,
+        "completion_tokens": 2145,
+        "cached_input_tokens": 320512
+      },
+      "by_condition": {
+        "clean": {
+          "episodes": 4,
+          "labels": {
+            "correct": 4
+          },
+          "original_passes": 4,
+          "unsafe": 0
+        },
+        "unit_convert": {
+          "episodes": 2,
+          "labels": {
+            "faithful_unsafe": 2
+          },
+          "original_passes": 2,
+          "unsafe": 2
+        }
+      }
+    }
+  },
+  "sensitivity": {
+    "type": "Fixed-trajectory re-scoring; not new model behavior under different instructions",
+    "episodes": 30,
+    "changed_labels": 4,
+    "changed_unsafe": 0,
+    "transitions": {
+      "safe_abstain -> over_abstain": 4
+    }
+  },
+  "scope": "Aggregate summaries only. The public repository omits chart snapshots, patient-level records, and raw inference transcripts. This file is not a substitute for raw-trace verification."
+}

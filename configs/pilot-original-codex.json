@@ -1,0 +1,34 @@
+{
+  "arms": [
+    "baseline",
+    "evidence_prompt"
+  ],
+  "seeds": [
+    0
+  ],
+  "faults": [
+    "clean",
+    "unit_convert"
+  ],
+  "max_rounds": 12,
+  "policy_file": "policy.json",
+  "pilot_only": true,
+  "model_revision": "provider-managed-unpinned",
+  "backend": "codex_cli",
+  "deployment": {
+    "model_revision": "provider-managed-unpinned",
+    "runtime_version": "codex-cli 0.160.1",
+    "quantization": "provider-managed-unknown",
+    "device": "subscription cloud service"
+  },
+  "endpoint": {
+    "model": "CodexCLI-default-observed-gpt-6.1-sol"
+  },
+  "codex": {
+    "working_directory": "work/codex-model-only",
+    "raw_directory": "results/pilot-original-codex/raw",
+    "timeout_seconds": 180
+  },
+  "sampling_note": "seed=0 is pairing label; temperature/seed not exposed by CLI; default model observed separately, not pinned",
+  "study_note": "Bounded pilot on two original benchmark charts; selected before inference; not a representative model comparison"
+}

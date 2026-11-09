@@ -1,0 +1,130 @@
+\documentclass{article}
+\PassOptionsToPackage{numbers,sort&compress}{natbib}
+\usepackage[preprint]{neurips_2024}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdftitle={Clinical Agents under Unreliable Charts: Midterm Report},pdfauthor={Jingjie Qian and Yuhao Lei}}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath,amsfonts}
+\usepackage{microtype}
+\input{results_macros}
+
+\title{Failing Safely or Failing Dangerously:\\Clinical Agents under Unreliable Charts}
+\author{Jingjie Qian\\Northeastern University\And Yuhao Lei\\Northeastern University}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Clinical agents can follow corrupted records while ordering actions that differ from a clean reference. A grader using the same chart may accept those actions. We investigate this mechanism in MedAgentBench through source auditing, frozen-chart execution, and bounded model pilots. A no-action control passes 57 of 60 medication tasks, exposing branch imbalance. After prospectively aligning conflicting format instructions, a \AlignedN-episode pilot yields \AlignedPass\ original passes, including \AlignedUnsafePass\ clean-reference medication deviations. These selected-case observations demonstrate a mechanism, not its prevalence. Evidence citations verify retrieved content without establishing its truth. We present implemented methods, initial results, and remaining study requirements.
+\end{abstract}
+
+\section{Introduction and Motivation}
+An electronic health record (EHR) agent may retrieve a laboratory value, apply a threshold rule, and submit a valid medication order while acting on incorrect data. If the grader derives its target from the same record, agent--grader agreement need not imply agreement with the uncorrupted task state.
+
+MedAgentBench contains 300 physician-derived tasks across ten categories \citep{jiang2025}. We study laboratory-dependent actions. \textbf{RQ1:} Can a chart-dependent grader accept medication actions that disagree with a frozen clean reference? \textbf{RQ2:} Does evidence checking before each write reduce observable violations, and can it address plausible corruption without independent corroboration? An agent cannot be expected to reconstruct an unavailable clean value, so checkable defects and hidden truth require different interpretations.
+
+We contribute an executable scorer audit, independent action evaluation with verified restoration, and real-model pilots. Outcomes concern declared benchmark rules, not clinical harm. The proposed model-scale comparison and historical GPT-4o-mini reproduction remain future work.
+
+\section{Related Work}
+EHR data-quality research distinguishes completeness, correctness, and currency \citep{weiskopf2013}, motivating our record deletion, value corruption, and timestamp interventions. MedAgentBench supplies the task environment \citep{jiang2025}; Rethinking MedAgentBench already studies verifier weaknesses, inaction, and format knowledge \citep{mantravadi2026}. We therefore do not claim the first audit of this benchmark. Our narrower contribution concerns a fault changing both the agent's evidence and the grader's reference.
+
+EHR-RobustGym evaluates clinical query robustness through interactive SQL and Python \citep{qiao2026}. Faithfulness vs.\ Safety examines acceptance of counterfactual medical evidence in question answering \citep{mo2026}. AbstentionBench shows that abstaining appropriately remains difficult \citep{kirichenko2025}. These works motivate evidence checking and refusal measurement; our outcome is a committed local order, evaluated against both the observed chart and an independent clean reference.
+
+\section{Methods}
+\subsection{Frozen snapshots and controlled faults}
+We exported complete relevant histories for 150 tasks: 30 each for latest magnesium, magnesium replacement, latest glucose, potassium replacement with repeat testing, and HbA1c checking/testing. They cover 87 patients; the 60 medication tasks cover 54. One conflicting potassium baseline is held out, leaving 149 runnable tasks. Export is read-only from a fixed benchmark image; the scenario clock is November 13, 2023, 10:15 UTC.
+
+Let $C_0$ be the immutable clean chart and $C_f$ its faulted copy. The agent observes only $C_f$. Four interventions target the latest relevant observation: \texttt{drop\_latest} deletes it; \texttt{decimal\_shift} multiplies its value by $0.1$; \texttt{unit\_convert} multiplies magnesium by $0.4114$ while retaining the mg/dL label; and \texttt{backdate\_latest} moves its date back 400 days. Unit corruption is restricted to magnesium with compatible source units. Full histories are re-queried after mutation because another observation may become eligible. Structurally inapplicable conditions and mutations with no target remain explicit in the run ledger.
+
+\subsection{Execution and independent policy}
+Each episode uses an isolated SQLite store. A successful POST commits and reads back a resource; committed writes remain scored after later failures. Input immutability and baseline reconstruction are verified. The store implements simplified benchmark resources, not full FHIR R4 or a live EHR. The original v1 harness instead parses POST JSON and acknowledges it without an HTTP write; its accepted proposals are not database execution.
+
+The independent policy has two parts. \textbf{P1} withholds an order when required evidence is missing, expired under a task-specified window, future-dated, unit-invalid, outside declared research bounds, or concurrently conflicting. \textbf{P2} compares medication actions against the clean target $R(C_0)$ when observed evidence passes P1. A plausible corrupted value can satisfy P1 while producing a P2 deviation; this is recorded as hidden-reference disagreement rather than a failure to infer inaccessible truth. Magnesium requires evidence within 24 hours; potassium has no stated freshness limit. HbA1c older than one year explicitly requires a new test, so that task exception takes precedence. Extra tests are reported separately from medication deviations.
+
+Medication bounds are provisional research assumptions: magnesium 0.2--20\,mg/dL and potassium 1--10\,mEq/L. Missing HbA1c returns $[-1]$ without testing; the original scorer's different interpretation is preserved. Read-only controls answer the observed chart. Labels distinguish correct actions, explained abstention candidates, chart-faithful or other unsafe actions, over-abstention, omissions, and incomplete runs. Explanation grounding still requires review.
+
+\subsection{Paired prompting, scoring, and reproducibility}
+Both arms share task rules, policy, tools, and a 12-turn budget. The evidence arm additionally requests an observation ID, timestamp, value, unit, window, and rule before each write; citations never block orders. The original scorer sees $C_f$; independent scoring retains $C_0$. Endpoints are fault-specific unsafe medication actions, unsafe actions among original passes, clean success, over-abstention, and failure. Patient-clustered paired bootstrap analysis is implemented, but these selected-case pilots are reported as counts.
+
+CPU trials use Qwen2.5 1.5B/3B Q4\_K\_M. Codex CLI 0.160.1 uses subscription-authenticated, ephemeral text inference with saved events and checks against tool execution. Its product context, unpinned weights, and sampling settings prevent a matched local-model comparison. Snapshot, configuration, prompt, and source fingerprints, protocol versions, and failures are archived.
+
+\newpage
+\section{Preliminary Results}
+\subsection{Source audit, branch imbalance, and software validation}
+Eight executable audit findings include shared-state grading, the POST execution abstraction, substring-based write detection, a terminal parser bounds error, future-dated magnesium acceptance, and route-format disagreement. The potassium scorer's absent age limit agrees with its task instructions and is not counted as an implementation defect. A handcrafted 4\,g/4\,h magnesium trace passes against a corrupted 0.18\,mg/dL chart but fails against clean 1.8\,mg/dL, which requires 1\,g/1\,h. This establishes possibility independently of model sampling.
+
+The exported subset has 24 empty relevant histories. Only two of 30 magnesium-order tasks and one of 30 potassium-order tasks require medication on clean data. Consequently, a control that performs no query or write and returns \texttt{FINISH([])} passes \textbf{57/60} original medication tasks. This is a deterministic control, not model accuracy. Overall pass rate can therefore conceal failure on the action-required branch. We will retain the original distribution and separately define a balanced challenge set.
+
+All 54 regression tests pass, covering threshold boundaries, alternative observations, duplicate orders, committed writes before failure, pagination, missing statistical pairs, authorization scope, and protocol alignment. Separately, 396 applicable synthetic programmed-control runs validate execution paths. They are not language-model observations.
+
+\subsection{Actual model pilots and prospective format alignment}
+Table~\ref{tab:pilots} separates pilot batches. The synthetic Codex pilot yields four clean successes, four explained abstentions, four omissions, and six chart-faithful medication deviations. Two initial CPU 3B episodes exceed context because search limits were ignored. Pagination and finish reminders remove that environment failure, but six new 3B episodes still fail to terminate. Each 3B batch includes one incorrectly coded medication. These are protocol-feasibility findings, not a model-scale trend.
+
+\begin{table}[ht]
+\centering
+\caption{Applicable model episodes, kept separate by data and protocol. ``Complete'' means FINISH/ABSTAIN, not correctness. Unsafe denotes the independent research-policy label. A dash means incomplete episodes were not graded by the original scorer.}
+\label{tab:pilots}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Model and batch & Runs & Complete & Original pass & Unsafe\\
+\midrule
+CPU 1.5B, original cases & 6 & 0 & -- & 0\\
+CPU 3B, initial protocol & 6 & 0 & -- & 1\\
+CPU 3B, paginated protocol & 6 & 0 & -- & 1\\
+Codex, synthetic cases & 18 & 18 & 2 & 6\\
+Codex, minimized original, legacy & 6 & 6 & 0 & 2\\
+Codex, minimized original, aligned & \AlignedN & \AlignedCompleted & \AlignedPass & \AlignedUnsafe\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The first minimized-original pilot uses one preselected action-required case each for magnesium and potassium, with both prompt arms and clean/applicable unit-fault conditions. Four clean episodes match the independent reference; both unit-fault episodes deviate. All original grades fail because route objects conflict with required strings, and final-answer formats also disagree. Rejection does not establish corruption detection.
+
+Before the supplementary run, we froze a new protocol that consistently specifies string-valued routes in the tool schema and explicit final-answer shapes. Both arms receive the same clarification; dose rules, safety policy, authorized inputs, and scorer are unchanged. All six applicable combinations are sampled once, with no performance-based retries. The aligned batch completes \AlignedCompleted/\AlignedN\ episodes and obtains \AlignedPass\ original passes, of which \AlignedUnsafePass\ are independently unsafe. These are raw new model outputs, not post-hoc corrected traces. The additional batch tests mechanism feasibility; temporal and provider drift prevent a causal attribution of changes solely to formatting.
+
+\subsection{Mechanism and policy sensitivity}
+For the magnesium unit fault, 1.8\,mg/dL becomes 0.74052 while retaining the mg/dL label. The observed task rule prescribes 4\,g/4\,h, whereas the clean target is 1\,g/1\,h. Both arms follow the altered value. The same two raw trajectories pass the original scorer under the corrupted reference and fail under the clean reference. Evidence fields can match the retrieved record perfectly while preserving this error. The two arms share one underlying magnesium case and must not be treated as two independent patients.
+
+We additionally re-score \SensitivityN\ fixed Codex trajectories after removing numerical bounds. This changes \SensitivityChanged\ outcome labels and \SensitivityUnsafeChanged\ unsafe-action indicators: four decimal-fault abstentions become over-abstentions under the alternate policy. The analysis isolates dependence of labels on the research policy; it does not measure how a model would behave under a different prompt. Numerical-bound sensitivity, observable violations, and hidden-reference deviations must remain separate in the full study.
+
+\section{Limitations and Next Steps}
+The pilots establish mechanisms, not population risk, mitigation efficacy, or clinical harm. Only two original cases were sampled, favoring action-required branches. The full 149-task study, model trials for read-only/HbA1c categories, and blinded explanation review remain incomplete. Local execution and unpinned Codex weights also limit generalization.
+
+Next steps are baseline adjudication, policy review, branch-stratified evaluation, and a separate synthetic challenge set covering action/no-action branches and task exceptions. Broader model runs will cover all faults and include two-reviewer explanation audits. The revised same-family 7B/32B/72B plan has 3,936 structurally applicable runs on 149 tasks, contingent on data eligibility and compute. Current evidence supports independent references and explicit format contracts; broader evidence-prompt effectiveness remains open.
+
+\begin{thebibliography}{6}
+\small
+\bibitem[Jiang et al.(2025)]{jiang2025}
+Yixing Jiang, Kameron C. Black, Gloria Geng, Danny Park, James Zou, Andrew Y. Ng, and Jonathan H. Chen.
+MedAgentBench: A realistic virtual EHR environment to benchmark medical LLM agents.
+\emph{NEJM AI}, 2025. \url{https://doi.org/10.1056/AIdbp2500144}.
+
+\bibitem[Weiskopf and Weng(2013)]{weiskopf2013}
+Nicole G. Weiskopf and Chunhua Weng.
+Methods and dimensions of electronic health record data quality assessment: Enabling reuse for clinical research.
+\emph{JAMIA}, 20(1):144--151, 2013. \url{https://doi.org/10.1136/amiajnl-2011-000681}.
+
+\bibitem[Mantravadi et al.(2026)]{mantravadi2026}
+Ananya Mantravadi, Prasanna Desikan, and Abhishek Mukherji.
+Rethinking MedAgentBench: A framework for fair medical LLM agent evaluation.
+2026. \href{https://www.centific.com/publications/rethinking-medagentbench-a-framework-for-fair-medical-llm-agent-evaluation}{Authors' publication page}.
+
+\bibitem[Qiao et al.(2026)]{qiao2026}
+Yitong Qiao, Yancheng Jin, Lei Liu, Yue Shen, Jian Wang, Jinjie Gu, and Zhixuan Chu.
+EHR-RobustGym: Benchmarking and training agents for robust clinical reasoning.
+arXiv:2609.39371, 2026. \url{https://arxiv.org/abs/2609.39371}.
+
+\bibitem[Mo et al.(2026)]{mo2026}
+Kaijie Mo, Siddhartha Venkatayogi, Chantal Shaib, Ramez Kouzy, Wei Xu, Byron C. Wallace, and Junyi Jessy Li.
+Faithfulness vs.\ safety: Evaluating LLM behavior under counterfactual medical evidence.
+\emph{Findings of ACL}, 2026. \url{https://arxiv.org/abs/2601.11886}.
+
+\bibitem[Kirichenko et al.(2025)]{kirichenko2025}
+Polina Kirichenko, Mark Ibrahim, Kamalika Chaudhuri, and Samuel J. Bell.
+AbstentionBench: Reasoning LLMs fail on unanswerable questions.
+arXiv:2506.09038, 2025. \url{https://arxiv.org/abs/2506.09038}.
+\end{thebibliography}
+\end{document}

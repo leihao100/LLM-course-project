@@ -1,0 +1,33 @@
+{
+  "model_revision": "5c7cb76a268fc6cfbb9c4777eb24ba6e27f9ee6c",
+  "deployment": {
+    "model_revision": "5c7cb76a268fc6cfbb9c4777eb24ba6e27f9ee6c",
+    "vllm_version": "",
+    "quantization": "AWQ 4-bit",
+    "gpu_model": ""
+  },
+  "endpoint": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "Qwen/Qwen2.5-32B-Instruct-AWQ",
+    "api_key_env": "MODEL_API_KEY",
+    "temperature": 0,
+    "max_tokens": 2048,
+    "timeout_seconds": 180
+  },
+  "arms": [
+    "baseline",
+    "evidence_prompt"
+  ],
+  "seeds": [
+    0
+  ],
+  "faults": [
+    "clean",
+    "drop_latest",
+    "decimal_shift",
+    "unit_convert",
+    "backdate_latest"
+  ],
+  "max_rounds": 12,
+  "policy_file": "policy.json"
+}

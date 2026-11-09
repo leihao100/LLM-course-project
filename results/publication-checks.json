@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-08",
+  "tests_passed": 54,
+  "audit_findings": 8,
+  "demo_nominal_combinations": 450,
+  "demo_applicable": 396,
+  "restoration_verified_all_executed": true,
+  "fixed_upstream_task_download_sha256_verified": true,
+  "publication_scope": "Code, documentation, reports, synthetic fixtures and aggregate results",
+  "excluded": "Original chart snapshots, patient-level records, raw inference logs, authorization records, credentials, model weights and local environments",
+  "staged_files_checked": 91,
+  "credential_pattern_hits": 0,
+  "existing_upstream_source_fixture": [
+    {
+      "file": "vendor/refsol_original.py",
+      "reason": "Existing fixture identifier in the unmodified, publicly distributed upstream scoring source; original source hash verified."
+    }
+  ],
+  "new_model_calls": 0
+}
